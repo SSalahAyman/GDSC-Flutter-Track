@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SignUpButton extends StatelessWidget {
-  const SignUpButton({super.key});
+  SignUpButton({super.key});
   static late double width;
   static late double height;
+  TextEditingController EmailController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -15,8 +16,10 @@ class SignUpButton extends StatelessWidget {
             minimumSize: Size(340, 43),
             primary: Color(0xff2a2f7e),
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16))),
-        onPressed: () {},
+                borderRadius: BorderRadius.circular(16)) ,),
+        onPressed: () {
+          if()
+        },
         child: Row(
           children: [
             Text("Sign now"),

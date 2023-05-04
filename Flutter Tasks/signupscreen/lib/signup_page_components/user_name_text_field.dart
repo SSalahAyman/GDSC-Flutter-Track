@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class UserNameTF extends StatelessWidget {
-  const UserNameTF({super.key});
+  UserNameTF({super.key, required this.EmailController});
   static late double width;
   static late double height;
+
+  final TextEditingController EmailController;
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -24,6 +26,13 @@ class UserNameTF extends StatelessWidget {
           padding: EdgeInsets.only(
               right: width * 0.03, left: width * 0.03, bottom: height * 0.015),
           child: TextFormField(
+            controller: EmailController,
+            validator: (EmailController) {
+              if (EmailController!.isEmpty) {
+                return "Please enter your username";
+              }
+              return null;
+            },
             decoration: InputDecoration(
               prefixIcon: const Icon(
                 Icons.person,
