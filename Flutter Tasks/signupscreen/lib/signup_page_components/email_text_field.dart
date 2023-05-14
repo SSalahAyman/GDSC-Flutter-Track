@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class EmailTF extends StatelessWidget {
-  const EmailTF({super.key});
+  EmailTF({super.key});
   static late double width;
   static late double height;
+
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -24,6 +25,11 @@ class EmailTF extends StatelessWidget {
           padding: EdgeInsets.only(
               right: width * 0.03, left: width * 0.03, bottom: height * 0.015),
           child: TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "please enter your Email";
+              }
+            },
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               prefixIcon: const Icon(
@@ -38,6 +44,10 @@ class EmailTF extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6.0),
                 borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2),
               ),
             ),

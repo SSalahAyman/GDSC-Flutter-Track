@@ -13,7 +13,7 @@ class SignupPage extends StatelessWidget {
   static late double width;
   static late double height;
 
-  GlobalKey<FormState> _formstate = GlobalKey<FormState>();
+  GlobalKey<FormState> signUpformState = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -21,57 +21,56 @@ class SignupPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Form(
-          key: _formstate,
+          key: signUpformState,
           child: Container(
             width: width,
             height: height,
-            child: SingleChildScrollView(
-              physics: NeverScrollableScrollPhysics(),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
+            child: ListView(
+              children: [
+                SizedBox(
+                  height: height * 0.02,
+                ),
 
-                  /*
-                  Page Header that contains >>> Signup image
-                  */
-                  PageHeader(),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
+                /*
+                Page Header that contains >>> Signup image
+                */
+                PageHeader(),
+                SizedBox(
+                  height: height * 0.02,
+                ),
 
-                  /*
-                  UserName textfield
-                  */
-                  UserNameTF(),
+                /*
+                UserName textfield
+                */
+                UserNameTF(),
 
-                  /*
-                  Email textfield
-                  */
-                  EmailTF(),
+                /*
+                Email textfield
+                */
+                EmailTF(),
 
-                  /*
-                  Password textfield
-                  */
-                  PasswordTF(),
+                /*
+                Password textfield
+                */
+                PasswordTF(),
 
-                  /*
-                  mobile number textfield
-                  */
-                  MobileNumberTF(),
+                /*
+                mobile number textfield
+                */
+                MobileNumberTF(),
 
-                  /*
-                  AlreadyHaveAnAccount header
-                  */
-                  AlreadyHaveAnAccount(),
+                /*
+                AlreadyHaveAnAccount header
+                */
+                AlreadyHaveAnAccount(),
 
-                  /*
-                  signup button
-                  */
-                  SignUpButton(),
-                ],
-              ),
+                /*
+                signup button
+                */
+                SignUpButton(
+                  sigUpformState: signUpformState,
+                ),
+              ],
             ),
           ),
         ),

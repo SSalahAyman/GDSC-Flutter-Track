@@ -24,6 +24,11 @@ class MobileNumberTF extends StatelessWidget {
           padding: EdgeInsets.only(
               right: width * 0.03, left: width * 0.03, bottom: height * 0.015),
           child: TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "please enter your Email";
+              }
+            },
             keyboardType: TextInputType.phone,
             decoration: InputDecoration(
               prefixIcon: const Icon(
@@ -37,8 +42,13 @@ class MobileNumberTF extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2)),
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(6.0),
+                borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2),
+              ),
             ),
           ),
         )

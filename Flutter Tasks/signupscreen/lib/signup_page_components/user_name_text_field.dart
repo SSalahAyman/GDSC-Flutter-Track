@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class UserNameTF extends StatelessWidget {
-  UserNameTF({super.key, required this.EmailController});
+  UserNameTF({super.key});
   static late double width;
   static late double height;
 
-  final TextEditingController EmailController;
+  // TextEditingController EmailController;
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -26,12 +26,11 @@ class UserNameTF extends StatelessWidget {
           padding: EdgeInsets.only(
               right: width * 0.03, left: width * 0.03, bottom: height * 0.015),
           child: TextFormField(
-            controller: EmailController,
-            validator: (EmailController) {
-              if (EmailController!.isEmpty) {
+            // controller: EmailController,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
                 return "Please enter your username";
               }
-              return null;
             },
             decoration: InputDecoration(
               prefixIcon: const Icon(
@@ -45,8 +44,13 @@ class UserNameTF extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2)),
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(color: Colors.red, width: 2),
+              ),
             ),
           ),
         )

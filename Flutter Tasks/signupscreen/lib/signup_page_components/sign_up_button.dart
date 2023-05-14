@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:signupscreen/screens/signup_page.dart';
 
 class SignUpButton extends StatelessWidget {
-  SignUpButton({super.key});
+  SignUpButton({super.key, required this.sigUpformState});
   static late double width;
   static late double height;
+  GlobalKey<FormState> sigUpformState;
+
   TextEditingController EmailController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -16,9 +19,9 @@ class SignUpButton extends StatelessWidget {
             minimumSize: Size(340, 43),
             primary: Color(0xff2a2f7e),
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16)) ,),
+                borderRadius: BorderRadius.circular(16))),
         onPressed: () {
-          if()
+          if (sigUpformState.currentState!.validate()) {}
         },
         child: Row(
           children: [
