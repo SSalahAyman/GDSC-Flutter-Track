@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:lottie/lottie.dart';
 import 'package:signupscreen/screens/signup_page.dart';
 
 class SignUpButton extends StatelessWidget {
@@ -20,8 +23,19 @@ class SignUpButton extends StatelessWidget {
             primary: Color(0xff2a2f7e),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16))),
-        onPressed: () {
-          if (sigUpformState.currentState!.validate()) {}
+        onPressed: () async {
+          if (sigUpformState.currentState!.validate()) {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return Center(
+                  child: Lottie.asset(
+                    'assets/animated_vectors/success_animation.json',
+                  ),
+                );
+              },
+            );
+          }
         },
         child: Row(
           children: [

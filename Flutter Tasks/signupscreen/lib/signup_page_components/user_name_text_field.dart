@@ -49,7 +49,7 @@ class UserNameTF extends StatelessWidget {
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: Colors.red, width: 2),
+                borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2),
               ),
             ),
           ),
