@@ -32,7 +32,7 @@ class PageHeader extends StatelessWidget {
             child: const Text(
               "Enter Your Details :",
               style: TextStyle(
-                color: Color(0xff2a2f7e),
+                color: Colors.green,
                 fontSize: 20,
                 fontWeight: FontWeight.w400,
                 // fontFamily: "pacifico",

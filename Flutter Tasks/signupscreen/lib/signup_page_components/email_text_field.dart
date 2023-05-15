@@ -27,7 +27,7 @@ class EmailTF extends StatelessWidget {
           child: TextFormField(
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return "please enter your Email";
+                return "please enter your Email ya lefta ,";
               }
             },
             keyboardType: TextInputType.emailAddress,
@@ -44,7 +44,7 @@ class EmailTF extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(color: Color(0xff2a2f7e), width: 2),
+                borderSide: BorderSide(color: Colors.green, width: 2),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(6.0),
