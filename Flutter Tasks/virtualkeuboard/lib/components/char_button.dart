@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CharButton extends StatelessWidget {
-  CharButton({super.key, required this.char, required this.ontap});
-  late String char;
-  late Function ontap;
+  const CharButton({super.key, required this.char, required this.ontap});
+  final String? char;
+  final VoidCallback? ontap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,12 +16,10 @@ class CharButton extends StatelessWidget {
           backgroundColor: Color(0xff2d2f3b),
         ),
         child: Text(
-          char,
+          char!,
           style: TextStyle(fontSize: 26, fontWeight: FontWeight.w500),
         ),
-        onPressed: () {
-          ontap;
-        },
+        onPressed: ontap!,
       ),
     );
   }
