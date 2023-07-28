@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
-class NotesViewBody extends StatelessWidget {
-  const NotesViewBody({super.key});
+import '../bottom_sheet_components/tf_note_title.dart';
 
+class NotesViewBody extends StatelessWidget {
+  NotesViewBody({super.key});
+
+  TextFieldNoteTitle textFieldNoteTitle = new TextFieldNoteTitle();
+
+  List<Widget> textNotes = [Text(textFieldNoteTitle.notetitleController.text)];
   @override
   Widget build(BuildContext context) {
-    return ListView();
+    return ListView(
+      children: textNotes,
+    );
   }
 }

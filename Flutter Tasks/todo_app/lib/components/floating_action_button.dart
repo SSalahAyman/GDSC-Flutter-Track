@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/components/bottom_sheet_view.dart';
 
 class FloatingActionButtonHomePage extends StatelessWidget {
-  FloatingActionButtonHomePage({super.key});
   late double width;
   late double height;
+
+  GlobalKey<FormState> addNoteFormState = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
@@ -15,7 +16,10 @@ class FloatingActionButtonHomePage extends StatelessWidget {
         backgroundColor: Colors.orange,
         child: Icon(Icons.add, size: width * 0.1),
         onPressed: () {
-          BottomSheetView(context);
+          BottomSheetView(
+            context: context,
+            addNoteFormState: addNoteFormState,
+          );
         },
       ),
     );
